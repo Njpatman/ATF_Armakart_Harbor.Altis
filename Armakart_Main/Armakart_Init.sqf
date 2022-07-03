@@ -46,7 +46,7 @@ if (hasInterface && local player) then
 	Current_Checkpoint = 1;
 	Sub_CP_obj = FINISH_LINE;
 	No_item = true;
-	UI_Color_int = [1,12] call BIS_fnc_randomInt;
+	UI_Color_int = [2,12] call BIS_fnc_randomInt;
 	UI_Color = [0.133,0.349,0.522,0.65];
 	Next_Sub_CP_Num = 0;
 	Loc_Array = [0, 0, 0, 0, player];
@@ -80,6 +80,8 @@ if (hasInterface && local player) then
 
 	//Sets group name for spectator boys
 	[group player, [(name player)]] remoteExec ["setGroupIdGlobal", 2];
+	
+	["players", "allsides"] execVM 'Armakart_Main/Armakart_Scripts/Player_Markers.sqf';
 
 	"Black_Screen_Layer" cutText ["", "BLACK FADED", 150];
 
